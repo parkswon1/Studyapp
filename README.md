@@ -87,8 +87,53 @@
 5. 추가 도구 및 서비스
 5-1. Google Maps API, Git, UnivCert(학교 이메일 인증 API)
 
+# Entity 구성
+
+1. 타이머 및 수동 시간 기입 서비스
+| Entity       | Field            | Type     | Description               |
+|--------------|------------------|----------|---------------------------|
+| StudySession | SessionId (PK)   | Integer  | 공부 세션의 고유 식별자 |
+|              | UserId (FK)      | Integer  | 사용자 식별자             |
+|              | StartTime        | DateTime | 공부 시작 시간            |
+|              | EndTime          | DateTime | 공부 종료 시간            |
+|              | CategoryId (FK)  | Integer  | 카테고리 식별자           |
+|              | IsManualEntry    | Boolean  | 수동 입력 여부             |
+|              | CreatedAt        | DateTime | 기록 생성 시간            |
+|              | Location         | String   | 위치 정보                  |
 
 
+2. 시간 기록 보기 서비스
+| Entity          | Field            | Type     | Description             |
+|-----------------|------------------|----------|-------------------------|
+| StudyRecordView | RecordId (PK)    | Integer  | 기록 뷰의 고유 식별자 |
+|                 | UserId (FK)      | Integer  | 사용자 식별자           |
+|                 | Date             | Date     | 날짜                    |
+|                 | TotalStudyTime   | Integer  | 총 공부 시간            |
+|                 | CategoriesSummary | Text    | 카테고리별 요약 정보    |
 
 
+3. 학교 이메일 인증 서비스
+| Entity  | Field         | Type     | Description             |
+|---------|---------------|----------|-------------------------|
+| User    | UserId (PK)   | Integer  | 사용자의 고유 식별자   |
+|         | Email         | String   | 이메일 주소             |
+|         | PasswordHash  | String   | 비밀번호 해시           |
+|         | FullName      | String   | 전체 이름               |
+|         | SchoolId (FK) | Integer  | 학교 식별자             |
+|         | IsEmailVerified | Boolean | 이메일 인증 여부        |
+| School  | SchoolId (PK) | Integer  | 학교의 고유 식별자     |
+|         | Name          | String   | 학교 이름               |
+|         | Domain        | String   | 이메일 도메인           |
+|         | Location      | String   | 위치 정보               |
 
+
+4. 공부 시간 경쟁 서비스 모델
+| Entity           | Field              | Type     | Description               |
+|------------------|--------------------|----------|---------------------------|
+| StudyCompetition | CompetitionId (PK) | Integer  | 경쟁의 고유 식별자       |
+|                  | UserId (FK)        | Integer  | 사용자 식별자             |
+|                  | Period             | String   | 기간 (예: 주간, 월간)    |
+|                  | Rank               | Integer  | 순위                      |
+|                  | TotalStudyTime     | Integer  | 총 공부 시간              |
+|                  | SchoolId (FK)      | Integer  | 학교 식별자               |
+|                  | Region             | String   | 대한민국의 '도' 기반 위치 |
