@@ -86,7 +86,7 @@
 
 ## Entity 구성
 
-###1. 타이머 및 수동 시간 기입 서비스
+### 1. 타이머 및 수동 시간 기입 서비스
 | Entity       | Field            | Type     | Description               |
 |--------------|------------------|----------|---------------------------|
 | StudySession | SessionId (PK)   | Integer  | 공부 세션의 고유 식별자 |
@@ -98,7 +98,7 @@
 |              | CreatedAt        | DateTime | 기록 생성 시간            |
 |              | Location         | String   | 위치 정보                  |
 
-###2. 시간 기록 보기 서비스
+### 2. 시간 기록 보기 서비스
 | Entity          | Field            | Type     | Description             |
 |-----------------|------------------|----------|-------------------------|
 | StudyRecordView | RecordId (PK)    | Integer  | 기록 뷰의 고유 식별자 |
@@ -107,7 +107,7 @@
 |                 | TotalStudyTime   | Integer  | 총 공부 시간            |
 |                 | CategoriesSummary | Text    | 카테고리별 요약 정보    |
 
-###3. 학교 이메일 인증 서비스
+### 3. 학교 이메일 인증 서비스
 | Entity  | Field         | Type     | Description             |
 |---------|---------------|----------|-------------------------|
 | User    | UserId (PK)   | Integer  | 사용자의 고유 식별자   |
@@ -121,7 +121,7 @@
 |         | Domain        | String   | 이메일 도메인           |
 |         | Location      | String   | 위치 정보               |
 
-###4. 공부 시간 경쟁 서비스 모델
+### 4. 공부 시간 경쟁 서비스 모델
 | Entity           | Field              | Type     | Description               |
 |------------------|--------------------|----------|---------------------------|
 | StudyCompetition | CompetitionId (PK) | Integer  | 경쟁의 고유 식별자       |
