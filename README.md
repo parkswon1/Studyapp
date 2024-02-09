@@ -79,9 +79,13 @@
 2-1. Spring Boot, Spring Security, JWT
 
 3. Database
-3-1. MYSQL : 사용자 데이터, 공부 시간 기록
+3-1. MYSQL
 
-4. 
+4. 인프라 및 배포
+4-1. Docker, Kubernetes, GitHub Actions, AWS
+
+5. 추가 도구 및 서비스
+5-1. Google Maps API, Git, UnivCert(학교 이메일 인증 API)
 
 
 
