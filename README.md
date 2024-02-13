@@ -1,4 +1,7 @@
 # 공부 많이 했어?
+## Notion
+https://unleashed-metacarpal-944.notion.site/app-5c214ca8fece4138b656bb1bad6756e7?pvs=4
+
 ## 공부 시간 기록 어플리케이션
 공부로 얻는 성취감에는 얼마나 공부를 했는지 기록하는 것도 있다고 생각합니다.
 공부를 컴퓨터로 하는 저는 컴퓨터 타이머로 제 시간을 기록합니다.
