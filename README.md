@@ -81,10 +81,16 @@ https://unleashed-metacarpal-944.notion.site/app-5c214ca8fece4138b656bb1bad6756e
 ### 3. Database
 - MYSQL
 
-### 4. 인프라 및 배포
-- Docker, Kubernetes, GitHub Actions, AWS
+### 4. Container Orchestration
+- Docker, Kubernetes
 
-### 5. 추가 도구 및 서비스
+### 5. CI/CD Automation
+- JenKins, Gradle
+
+### 6. Data Sync
+- kafka
+
+### 7. 추가 도구 및 서비스
 - Google Maps API, Git, UnivCert(학교 이메일 인증 API)
 
 ## Entity 구성
