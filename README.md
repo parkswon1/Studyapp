@@ -188,5 +188,5 @@ msa구조로 만드려고 합니다.
 -학교별, 지역별, 전체 랭킹을 조회합니다.
 -랭킹을 업데이트하고 관리합니다.
 
-## CI/CD 아키텍처 구상도
+## CI/CD 파이프라인 구상도
 ![image](https://github.com/parkswon1/Studyapp/assets/74632742/0ce24dad-1d1f-413d-aea1-fc975449752b)
