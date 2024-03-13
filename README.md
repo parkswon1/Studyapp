@@ -10,7 +10,7 @@ https://unleashed-metacarpal-944.notion.site/app-5c214ca8fece4138b656bb1bad6756e
 또한 가끔 시간 기록하는걸 까먹어서 그날을 기록하지 못합니다.
 이는 저에게 성취감을 저하시키는 요인이 됐고 타이머로만 공부한 시간을 기록하고 싶지 않습니다.
 그래서 이 앱을 만드려고 합니다.
-
+msa구조로 만드려고 합니다.
 ## 기능적 요구사항
 
 ### 1. 타이머 기능
@@ -153,3 +153,36 @@ https://unleashed-metacarpal-944.notion.site/app-5c214ca8fece4138b656bb1bad6756e
 |                  | TotalStudyTime     | Integer  | 총 공부 시간              |
 |                  | SchoolId (FK)      | Integer  | 학교 식별자               |
 |                  | Location (FK)      | Integer  | 위치 정보                 |
+
+## MSA 구조
+###1. 인증 및 사용자 관리 서비스 (Authentication & User Management Service)
+
+사용자 등록, 로그인, 비밀번호 변경 등 사용자 관리 기능을 담당합니다.
+사용자의 인증 및 인가를 처리합니다.
+UnivCert(학교 이메일 인증 API)와 연동하여 학교 이메일을 통한 계정 인증을 처리합니다.
+데이터베이스에 사용자 정보를 저장하고 관리합니다.
+
+###2. 타이머 및 공부 시간 기록 서비스 (Timer & Study Time Recording Service)
+
+사용자의 공부 시간을 타이머로 기록하고 관리합니다.
+타이머 시작, 정지, 일시 정지, 재개 등의 기능을 제공합니다.
+수동 입력된 공부 시간을 처리합니다.
+카테고리 별로 공부 시간을 분류하고 관리합니다.
+위치 정보를 기록합니다.
+Kafka를 사용하여 데이터 동기화를 처리합니다.
+
+###3. 공부 내용 및 카테고리 관리 서비스 (Study Content & Category Management Service)
+
+사용자가 공부한 내용을 관리합니다.
+공부 내용의 추가, 수정, 삭제 기능을 제공합니다.
+공부한 내용을 카테고리 별로 분류합니다.
+데이터베이스에 공부 내용 및 카테고리 정보를 저장하고 관리합니다.
+###4. 시간 기록 조회 서비스 (Study Time Record Query Service)
+
+달력 뷰를 통해 특정 날짜의 공부 시간을 조회합니다.
+차트 및 그래프를 통해 일정 기간동안의 공부 시간 통계를 제공합니다.
+카테고리별 공부 시간을 조회합니다.
+학교 및 지역 기반 경쟁 서비스 (School & Location-based Competition Service)
+
+학교별, 지역별, 전체 랭킹을 조회합니다.
+랭킹을 업데이트하고 관리합니다.
