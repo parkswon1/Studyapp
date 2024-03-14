@@ -97,73 +97,66 @@ msa구조로 만드려고 합니다.
 # 데이터 명세
 ## Entity 구성
 
-### 1. 타이머 시간 모델
--각 시간 기록 Entity
-| Entity       | Field            | Type     | Description               |
-|--------------|------------------|----------|---------------------------|
-| StudySession | SessionId (PK)   | Integer  | 공부 세션의 고유 식별자   |
-|              | UserId (FK)      | Integer  | 사용자 식별자             |
-|              | StartTime        | DateTime | 공부 시작 시간            |
-|              | EndTime          | DateTime | 공부 종료 시간            |
-|              | CategoryName     | String   | 카테고리 종류             |
-|              | IsManualEntry    | Boolean  | 수동 입력 여부            |
-|              | CreatedAt        | DateTime | 기록 생성 시간            |
-|              | Location         | String   | 위치 정보                 |
+### 1. 타이머 시간 모델 - 각 시간 기록 Entity
 
-### 2. 통합 시간 기록 모델
--날짜당 기록 시간
-| Entity          | Field            | Type     | Description             |
-|-----------------|------------------|----------|-------------------------|
-| StudyRecordView | RecordId (PK)    | Integer  | 기록 뷰의 고유 식별자   |
-|                 | UserId (FK)      | Integer  | 사용자 식별자           |
-|                 | Date             | Date     | 날짜                    |
-|                 | TotalStudyTime   | Integer  | 총 공부 시간            |
-|                 | RankUsedTime     | Integer  | 비 입력 공부 시간       |
-|                 | CategoriesSummary | Text    | 카테고리별 요약 정보    |
+| Entity      | Field          | Type         | Size  | Constraint | Description              |
+|-------------|----------------|--------------|-------|------------|--------------------------|
+| StudySession| SessionId      | Integer      |       | PK         | 공부 세션의 고유 식별자  |
+|             | UserId         | Integer      |       | FK         | 사용자 식별자            |
+|             | StartTime      | DateTime     |       |            | 공부 시작 시간           |
+|             | EndTime        | DateTime     |       |            | 공부 종료 시간           |
+|             | CategoryID     | Integer      |       | FK         | 카테고리의 고유 식별자   |
+|             | IsManualEntry  | Boolean      |       |            | 수동 입력 여부           |
+|             | CreatedAt      | DateTime     |       |            | 기록 생성 시간           |
+|             | Location       | String       |       |            | 위치 정보                |
 
-### 3. 사용자 카테고리 모델
--사용자 지정 카테고리
-| Entity  | Field       | Type    | Description                 |
-|---------|-------------|---------|-----------------------------|
-| Category| UserId (PK, FK) | Integer | 사용자의 고유 식별자    |
-|         | CategoryId (FK) | Integer | 카테고리의 고유 식별자 |
-|         | CustomName  | String  | 사용자가 지정한 카테고리 이름 
+### 2. 통합 시간 기록 모델 - 날짜당 기록 시간
 
-### 4. 사용자, 학교, 위치 기록 모델
--사용자 Entity
-| Entity  | Field         | Type     | Description             |
-|---------|---------------|----------|-------------------------|
-| User    | UserId (PK)   | Integer  | 사용자의 고유 식별자    |
-|         | Email         | String   | 이메일 주소             |
-|         | PasswordHash  | String   | 비밀번호 해시           |
-|         | FullName      | String   | 전체 이름               |
-|         | SchoolId (FK) | Integer  | 학교 식별자             |
-|         | IsEmailVerified | Boolean | 이메일 인증 여부       |
+| Entity         | Field          | Type         | Size  | Constraint | Description                |
+|----------------|----------------|--------------|-------|------------|----------------------------|
+| StudyRecordView| RecordId       | Integer      |       | PK         | 기록 뷰의 고유 식별자      |
+|                | UserId         | Integer      |       | FK         | 사용자 식별자              |
+|                | Date           | Date         |       |            | 날짜                       |
+|                | TotalStudyTime | Integer      |       |            | 총 공부 시간               |
+|                | RankUsedTime   | Integer      |       |            | 비 입력 공부 시간          |
+|                | CategoryId     | Integer      |       |            | 카테고리의 고유 식별자     |
 
--학교 Entity
-| Entity  | Field         | Type     | Description             |
-|---------|---------------|----------|-------------------------|
-| School  | SchoolId (PK) | Integer  | 학교의 고유 식별자      |
-|         | Name          | String   | 학교 이름               |
-|         | Domain        | String   | 이메일 도메인           |
+### 3. 사용자 카테고리 모델 - 사용자 지정 카테고리
 
--위치 Entity
-| Entity    | Field             | Type     | Description             |
-|-----------|-------------------|----------|-------------------------|
-| Location  | LocationlId (PK)  | Integer  | 위치의 고유 식별자      |
-|           | Name              | String   | 위치 이름               |
+| Entity   | Field          | Type         | Size  | Constraint | Description                    |
+|----------|----------------|--------------|-------|------------|--------------------------------|
+| Category | UserId         | Integer      |       | PK, FK     | 사용자의 고유 식별자           |
+|          | CategoryId     | Integer      |       | FK         | 카테고리의 고유 식별자         |
+|          | CustomName     | String       | 255   |            | 사용자가 지정한 카테고리 이름  |
 
-### 5. 공부 시간 경쟁 서비스 모델
--공부 시간 랭킹 기록 Entitiy
-| Entity           | Field              | Type     | Description               |
-|------------------|--------------------|----------|---------------------------|
-| StudyCompetition | CompetitionId (PK) | Integer  | 경쟁의 고유 식별자        |
-|                  | UserId (FK)        | Integer  | 사용자 식별자             |
-|                  | Period             | String   | 기간 (예: 주간, 월간)     |
-|                  | Rank               | Integer  | 순위                      |
-|                  | TotalStudyRankTime | Integer  | 총 공부 시간              |
-|                  | SchoolId (FK)      | Integer  | 학교 식별자               |
-|                  | Location (FK)      | Integer  | 위치 정보                 |
+### 4. 사용자, 학교, 위치 기록 모델 - 사용자 Entity
+
+| Entity  | Field          | Type         | Size  | Constraint | Description             |
+|---------|----------------|--------------|-------|------------|-------------------------|
+| User    | UserId         | Integer      |       | PK         | 사용자의 고유 식별자    |
+|         | Email          | String       | 255   |            | 이메일 주소             |
+|         | PasswordHash   | String       | 255   |            | 비밀번호 해시           |
+|         | FullName       | String       | 255   |            | 전체 이름               |
+|         | SchoolId       | Integer      |       | FK         | 학교 식별자             |
+|         | IsEmailVerified | Boolean      |       |            | 이메일 인증 여부       |
+
+| Entity  | Field          | Type         | Size  | Constraint | Description             |
+|---------|----------------|--------------|-------|------------|-------------------------|
+| School  | SchoolId       | Integer      |       | PK         | 학교의 고유 식별자      |
+|         | Name           | String       | 255   |            | 학교 이름               |
+|         | Domain         | String       | 255   |            | 이메일 도메인           |
+
+| Entity    | Field          | Type         | Size  | Constraint | Description             |
+|-----------|----------------|--------------|-------|------------|-------------------------|
+| Location  | LocationId     | Integer      |       | PK         | 위치의 고유 식별자      |
+|           | Name           | String       | 255   |            | 위치 이름               |
+
+### 5. 공부 시간 경쟁 서비스 모델 - 공부 시간 랭킹 기록 Entitiy
+
+| Entity           | Field            | Type         | Size  | Constraint | Description               |
+|------------------|------------------|--------------|-------|------------|---------------------------|
+| StudyCompetition | CompetitionId    | Integer     
+
 
 ## class Diagram
 ![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/400aafde-760a-4f39-9835-7f8d181952e9)
