@@ -105,7 +105,7 @@ msa구조로 만드려고 합니다.
 |              | UserId (FK)      | Integer  | 사용자 식별자             |
 |              | StartTime        | DateTime | 공부 시작 시간            |
 |              | EndTime          | DateTime | 공부 종료 시간            |
-|              | CategoryId       | LongText | 카테고리 종류             |
+|              | CategoryName     | String   | 카테고리 종류             |
 |              | IsManualEntry    | Boolean  | 수동 입력 여부            |
 |              | CreatedAt        | DateTime | 기록 생성 시간            |
 |              | Location         | String   | 위치 정보                 |
@@ -121,7 +121,14 @@ msa구조로 만드려고 합니다.
 |                 | RankUsedTime     | Integer  | 비 입력 공부 시간       |
 |                 | CategoriesSummary | Text    | 카테고리별 요약 정보    |
 
-### 3. 사용자, 학교, 위치 기록 모델
+### 3. 사용자 카테고리 모델
+| Field       | Type    | Description                 |
+|-------------|---------|-----------------------------|
+| UserId (PK, FK) | Integer | 사용자의 고유 식별자       |
+| CategoryId (FK) | Integer | 카테고리의 고유 식별자 |
+| CustomName  | String  | 사용자가 지정한 카테고리 이름 |
+
+### 4. 사용자, 학교, 위치 기록 모델
 -사용자 Entity
 | Entity  | Field         | Type     | Description             |
 |---------|---------------|----------|-------------------------|
@@ -145,7 +152,7 @@ msa구조로 만드려고 합니다.
 | Location  | LocationlId (PK)  | Integer  | 위치의 고유 식별자      |
 |           | Name              | String   | 위치 이름               |
 
-### 4. 공부 시간 경쟁 서비스 모델
+### 5. 공부 시간 경쟁 서비스 모델
 -공부 시간 랭킹 기록 Entitiy
 | Entity           | Field              | Type     | Description               |
 |------------------|--------------------|----------|---------------------------|
