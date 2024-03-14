@@ -11,6 +11,7 @@ https://unleashed-metacarpal-944.notion.site/app-5c214ca8fece4138b656bb1bad6756e
 이는 저에게 성취감을 저하시키는 요인이 됐고 타이머로만 공부한 시간을 기록하고 싶지 않습니다.
 그래서 이 앱을 만드려고 합니다.
 msa구조로 만드려고 합니다.
+# 요구사항항
 ## 기능적 요구사항
 
 ### 1. 타이머 기능
@@ -93,6 +94,7 @@ msa구조로 만드려고 합니다.
 ### 7. 추가 도구 및 서비스
 - Google Maps API, Git, UnivCert(학교 이메일 인증 API)
 
+# 데이터 명세세
 ## Entity 구성
 
 ### 1. 타이머 시간 모델
@@ -155,6 +157,11 @@ msa구조로 만드려고 합니다.
 |                  | SchoolId (FK)      | Integer  | 학교 식별자               |
 |                  | Location (FK)      | Integer  | 위치 정보                 |
 
+## class Diagram
+![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/bb4bd033-de4c-4deb-a3e6-d81716aa784b)
+
+# 아키텍처 설계
+
 ## MSA 구조
 ### 1. 인증 및 사용자 관리 서비스 (Authentication & User Management Service)
 
@@ -191,8 +198,3 @@ msa구조로 만드려고 합니다.
 
 ## CI/CD 파이프라인 구상도
 ![제목 없는 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/cb044daf-e4cf-4352-99a3-84296208dbe1)
-
-## class Diagram
-![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/bb4bd033-de4c-4deb-a3e6-d81716aa784b)
-
-
