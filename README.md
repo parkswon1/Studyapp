@@ -116,6 +116,7 @@ msa구조로 만드려고 합니다.
 |                 | UserId (FK)      | Integer  | 사용자 식별자           |
 |                 | Date             | Date     | 날짜                    |
 |                 | TotalStudyTime   | Integer  | 총 공부 시간            |
+|                 | TotalStudyTime   | Integer  | 비 입력 공부 시간       |
 |                 | CategoriesSummary | Text    | 카테고리별 요약 정보    |
 
 ### 3. 사용자, 학교, 위치 기록 모델
