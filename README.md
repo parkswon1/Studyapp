@@ -94,7 +94,7 @@ msa구조로 만드려고 합니다.
 ### 7. 추가 도구 및 서비스
 - Google Maps API, Git, UnivCert(학교 이메일 인증 API)
 
-# 데이터 명세세
+# 데이터 명세
 ## Entity 구성
 
 ### 1. 타이머 시간 모델
