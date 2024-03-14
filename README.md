@@ -109,7 +109,7 @@ msa구조로 만드려고 합니다.
 |              | Location         | String   | 위치 정보                  |
 
 ### 2. 통합 시간 기록 모델
--날자당 기록 시간
+-날짜당 기록 시간
 | Entity          | Field            | Type     | Description             |
 |-----------------|------------------|----------|-------------------------|
 | StudyRecordView | RecordId (PK)    | Integer  | 기록 뷰의 고유 식별자 |
