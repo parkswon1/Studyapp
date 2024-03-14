@@ -163,13 +163,13 @@ msa구조로 만드려고 합니다.
 
 ### 6. 학교, 위치 랭킹 모델 - 공부 시간 경쟁 서비스 모델 상속 Entitiy
 
-| Entity      | Field          | Type         | Size  | Constraint | Description             |
-|-------------|----------------|--------------|-------|------------|-------------------------|
-| SchoolRank  | SchoolId       | Integer      |       | PK         | 학교의 고유 식별자      |
+| Entity           | Field            | Type     | Size     | Constraint | Description               |
+|------------------|------------------|----------|----------|------------|---------------------------|
+| SchoolRank       | SchoolId         | Integer  |          | PK         | 학교의 고유 식별자        |
 
-| Entity        | Field          | Type         | Size  | Constraint | Description             |
-|---------------|----------------|--------------|-------|------------|-------------------------|
-| LocationRank  | LocationId     | Integer      |       | PK         | 위치의 고유 식별자      |
+| Entity           | Field            | Type     | Size     | Constraint | Description               |
+|------------------|------------------|----------|----------|------------|---------------------------|
+| LocationRank     | LocationId       | Integer  |          | PK         | 위치의 고유 식별자        |
 
 ## class Diagram
 ![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/69cffc8c-d51e-4696-ad3d-4150845d2851)
