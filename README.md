@@ -129,7 +129,7 @@ msa구조로 만드려고 합니다.
 |          | UserId         | Integer      |       | FK         | 사용자의 고유 식별자           |
 |          | CustomName     | String       | 255   |            | 사용자가 지정한 카테고리 이름  |
 
-### 4. 사용자, 학교, 위치 기록 모델 - 사용자 Entity
+### 4. 사용자 - 사용자 Entity
 
 | Entity  | Field          | Type         | Size  | Constraint | Description             |
 |---------|----------------|--------------|-------|------------|-------------------------|
@@ -153,13 +153,26 @@ msa구조로 만드려고 합니다.
 
 ### 5. 공부 시간 경쟁 서비스 모델 - 공부 시간 랭킹 기록 Entitiy
 
-| Entity           | Field            | Type         | Size  | Constraint | Description               |
-|------------------|------------------|--------------|-------|------------|---------------------------|
-| StudyCompetition | CompetitionId    | Integer     
+| Entity           | Field            | Type     | Size     | Constraint | Description               |
+|------------------|------------------|----------|----------|------------|---------------------------|
+| StudyCompetition | CompetitionId    | Integer  |          | PK         | 경쟁의 고유 식별자        |
+|                  | UserId           | Integer  |          | FK         | 사용자 식별자             |
+|                  | Period           | String   |          |            | 기간 (예: 주간, 월간)     |
+|                  | Rank             | Integer  |          |            | 순위                      |
+|                  | TotalStudyRankTime | Integer |          |            | 총 공부 시간             |
 
+### 6. 학교, 위치 랭킹 모델 - 공부 시간 경쟁 서비스 모델 상속 Entitiy
+
+| Entity      | Field          | Type         | Size  | Constraint | Description             |
+|-------------|----------------|--------------|-------|------------|-------------------------|
+| SchoolRank  | SchoolId       | Integer      |       | PK         | 학교의 고유 식별자      |
+
+| Entity        | Field          | Type         | Size  | Constraint | Description             |
+|---------------|----------------|--------------|-------|------------|-------------------------|
+| LocationRank  | LocationId     | Integer      |       | PK         | 위치의 고유 식별자      |
 
 ## class Diagram
-![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/cd01bbf7-eef5-4ef7-bf2a-51251a294929)
+![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/69cffc8c-d51e-4696-ad3d-4150845d2851)
 
 # 아키텍처 설계
 
