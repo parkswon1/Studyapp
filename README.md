@@ -165,7 +165,7 @@ msa구조로 만드려고 합니다.
 |                  | Location (FK)      | Integer  | 위치 정보                 |
 
 ## class Diagram
-![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/bb4bd033-de4c-4deb-a3e6-d81716aa784b)
+![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/400aafde-760a-4f39-9835-7f8d181952e9)
 
 # 아키텍처 설계
 
