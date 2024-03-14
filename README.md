@@ -122,11 +122,12 @@ msa구조로 만드려고 합니다.
 |                 | CategoriesSummary | Text    | 카테고리별 요약 정보    |
 
 ### 3. 사용자 카테고리 모델
-| Field       | Type    | Description                 |
-|-------------|---------|-----------------------------|
-| UserId (PK, FK) | Integer | 사용자의 고유 식별자       |
-| CategoryId (FK) | Integer | 카테고리의 고유 식별자 |
-| CustomName  | String  | 사용자가 지정한 카테고리 이름 |
+-사용자 지정 카테고리
+| Entity  | Field       | Type    | Description                 |
+|---------|-------------|---------|-----------------------------|
+| Category| UserId (PK, FK) | Integer | 사용자의 고유 식별자    |
+|         | CategoryId (FK) | Integer | 카테고리의 고유 식별자 |
+|         | CustomName  | String  | 사용자가 지정한 카테고리 이름 
 
 ### 4. 사용자, 학교, 위치 기록 모델
 -사용자 Entity
