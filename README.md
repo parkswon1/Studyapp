@@ -99,20 +99,20 @@ msa구조로 만드려고 합니다.
 -각 시간 기록 Entity
 | Entity       | Field            | Type     | Description               |
 |--------------|------------------|----------|---------------------------|
-| StudySession | SessionId (PK)   | Integer  | 공부 세션의 고유 식별자 |
+| StudySession | SessionId (PK)   | Integer  | 공부 세션의 고유 식별자   |
 |              | UserId (FK)      | Integer  | 사용자 식별자             |
 |              | StartTime        | DateTime | 공부 시작 시간            |
 |              | EndTime          | DateTime | 공부 종료 시간            |
-|              | CategoryId (FK)  | Integer  | 카테고리 식별자           |
-|              | IsManualEntry    | Boolean  | 수동 입력 여부             |
+|              | CategoryId       | LongText | 카테고리 종류             |
+|              | IsManualEntry    | Boolean  | 수동 입력 여부            |
 |              | CreatedAt        | DateTime | 기록 생성 시간            |
-|              | Location         | String   | 위치 정보                  |
+|              | Location         | String   | 위치 정보                 |
 
 ### 2. 통합 시간 기록 모델
 -날짜당 기록 시간
 | Entity          | Field            | Type     | Description             |
 |-----------------|------------------|----------|-------------------------|
-| StudyRecordView | RecordId (PK)    | Integer  | 기록 뷰의 고유 식별자 |
+| StudyRecordView | RecordId (PK)    | Integer  | 기록 뷰의 고유 식별자   |
 |                 | UserId (FK)      | Integer  | 사용자 식별자           |
 |                 | Date             | Date     | 날짜                    |
 |                 | TotalStudyTime   | Integer  | 총 공부 시간            |
@@ -122,17 +122,17 @@ msa구조로 만드려고 합니다.
 -사용자 Entity
 | Entity  | Field         | Type     | Description             |
 |---------|---------------|----------|-------------------------|
-| User    | UserId (PK)   | Integer  | 사용자의 고유 식별자   |
+| User    | UserId (PK)   | Integer  | 사용자의 고유 식별자    |
 |         | Email         | String   | 이메일 주소             |
 |         | PasswordHash  | String   | 비밀번호 해시           |
 |         | FullName      | String   | 전체 이름               |
 |         | SchoolId (FK) | Integer  | 학교 식별자             |
-|         | IsEmailVerified | Boolean | 이메일 인증 여부        |
+|         | IsEmailVerified | Boolean | 이메일 인증 여부       |
 
 -학교 Entity
 | Entity  | Field         | Type     | Description             |
 |---------|---------------|----------|-------------------------|
-| School  | SchoolId (PK) | Integer  | 학교의 고유 식별자     |
+| School  | SchoolId (PK) | Integer  | 학교의 고유 식별자      |
 |         | Name          | String   | 학교 이름               |
 |         | Domain        | String   | 이메일 도메인           |
 
@@ -146,9 +146,9 @@ msa구조로 만드려고 합니다.
 -공부 시간 랭킹 기록 Entitiy
 | Entity           | Field              | Type     | Description               |
 |------------------|--------------------|----------|---------------------------|
-| StudyCompetition | CompetitionId (PK) | Integer  | 경쟁의 고유 식별자       |
+| StudyCompetition | CompetitionId (PK) | Integer  | 경쟁의 고유 식별자        |
 |                  | UserId (FK)        | Integer  | 사용자 식별자             |
-|                  | Period             | String   | 기간 (예: 주간, 월간)    |
+|                  | Period             | String   | 기간 (예: 주간, 월간)     |
 |                  | Rank               | Integer  | 순위                      |
 |                  | TotalStudyTime     | Integer  | 총 공부 시간              |
 |                  | SchoolId (FK)      | Integer  | 학교 식별자               |
