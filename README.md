@@ -119,14 +119,14 @@ msa구조로 만드려고 합니다.
 |                | Date           | Date         |       |            | 날짜                       |
 |                | TotalStudyTime | Integer      |       |            | 총 공부 시간               |
 |                | RankUsedTime   | Integer      |       |            | 비 입력 공부 시간          |
-|                | CategoryId     | Integer      |       |            | 카테고리의 고유 식별자     |
+|                | CategoryId     | Integer      |       | FK         | 카테고리의 고유 식별자     |
 
 ### 3. 사용자 카테고리 모델 - 사용자 지정 카테고리
 
 | Entity   | Field          | Type         | Size  | Constraint | Description                    |
 |----------|----------------|--------------|-------|------------|--------------------------------|
-| Category | UserId         | Integer      |       | PK, FK     | 사용자의 고유 식별자           |
-|          | CategoryId     | Integer      |       | FK         | 카테고리의 고유 식별자         |
+| Category | CategoryId     | Integer      |       | PK         | 카테고리의 고유 식별자         |
+|          | UserId         | Integer      |       | FK         | 사용자의 고유 식별자           |
 |          | CustomName     | String       | 255   |            | 사용자가 지정한 카테고리 이름  |
 
 ### 4. 사용자, 학교, 위치 기록 모델 - 사용자 Entity
@@ -159,7 +159,7 @@ msa구조로 만드려고 합니다.
 
 
 ## class Diagram
-![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/400aafde-760a-4f39-9835-7f8d181952e9)
+![클래스 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/cd01bbf7-eef5-4ef7-bf2a-51251a294929)
 
 # 아키텍처 설계
 
