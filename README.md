@@ -93,7 +93,7 @@
 
 ### 7. 추가 도구 및 서비스
 - Google Maps API, Git, UnivCert(학교 이메일 인증 API)
-- 
+  
 # 시스템 동작
 ## UsecaseDiagram
 ![UsecaseDiagram](https://github.com/parkswon1/Studyapp/assets/74632742/a59cb3b6-a0cb-48ca-8575-bad620f4ec04)
