@@ -218,4 +218,4 @@
 - 랭킹을 업데이트하고 관리합니다.
 
 ## CI/CD 파이프라인 구상도
-![제목 없는 다이어그램 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/cb044daf-e4cf-4352-99a3-84296208dbe1)
+![CICD파이프라인 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/76f44aed-3b7a-407b-8196-238d588bb0bb)
