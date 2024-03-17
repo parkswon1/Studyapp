@@ -76,7 +76,7 @@
 ## 기술 스택
 
 ### 1. Front-end
-- React, React Native
+- React, React Native, Nginx
 
 ### 2. Back-end
 - Spring Boot, Spring Security, JWT
