@@ -82,7 +82,7 @@
 - Spring Boot, Spring Security, JWT
 
 ### 3. Database
-- MYSQL
+- PostgreSQL
 
 ### 4. Container Orchestration
 - Docker, Kubernetes
