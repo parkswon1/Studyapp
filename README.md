@@ -187,13 +187,13 @@
 - 기능: 타이머 시작, 정지, 기록, 위치 기록, 날짜 기록, 일시 정지 및 재개
 - 데이터 모델: StudySession
 - 엔드포인트: /timer/start, /timer/stop, /timer/record, /timer/pause-resume
-- 
+  
 ## 2. 시간 기록 서비스 (Time Record Service)
 
 - 기능: 공부 시간 기록 조회 (달력 뷰, 차트 및 그래프 조회, 카테고리별 조회)
 - 데이터 모델: StudyRecordView
 - 엔드포인트: /time-record/calendar-view, /time-record/stats-view, /time-record/category-view
-- 
+  
 ## 3. 사용자 관리 서비스 (User Management Service)
 
 - 기능: 사용자 관리 (인증, 계정 인증, 정보 관리, 회원 가입, 회원 탈퇴)
