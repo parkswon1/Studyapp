@@ -212,5 +212,8 @@
 - 데이터 모델: StudyCompetition, SchoolRank, LocationRank
 - 엔드포인트: /competition/school-rank, /competition/location-rank, /competition/overall-rank
 
-## CI/CD 파이프라인 구상도
+# API 명세서
+https://seoks-organization-1.gitbook.io/untitled/
+
+# CI/CD 파이프라인 구상도
 ![CICD파이프라인 drawio](https://github.com/parkswon1/Studyapp/assets/74632742/76f44aed-3b7a-407b-8196-238d588bb0bb)
